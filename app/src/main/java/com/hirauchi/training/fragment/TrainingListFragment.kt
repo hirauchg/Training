@@ -13,4 +13,11 @@ class TrainingListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return TrainingListFragmentUI().createView(AnkoContext.create(inflater.context, this, false))
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+
+    }
+
 }
