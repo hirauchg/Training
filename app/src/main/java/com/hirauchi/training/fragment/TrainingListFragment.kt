@@ -1,6 +1,7 @@
 package com.hirauchi.training.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import com.hirauchi.training.model.TrainingCard
 import com.hirauchi.training.ui.TrainingListFragmentUI
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.support.v4.toast
+import org.jetbrains.anko.startActivity
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapterListener {
 
@@ -42,7 +45,7 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
     }
 
     override fun onClickCard(position: Int) {
-        toast("onClickCard")
+        activity?.startActivity<OssLicensesMenuActivity>("title" to "オープンソースライセンス")
     }
 
     override fun onClickName(position: Int) {
