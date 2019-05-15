@@ -45,7 +45,7 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
     }
 
     override fun onClickCard(position: Int) {
-        activity?.startActivity<OssLicensesMenuActivity>("title" to "オープンソースライセンス")
+        toast("onClickCard")
     }
 
     override fun onClickName(position: Int) {

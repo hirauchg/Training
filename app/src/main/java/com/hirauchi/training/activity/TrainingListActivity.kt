@@ -13,6 +13,7 @@ class TrainingListActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
         supportFragmentManager.beginTransaction().replace(R.id.Container, TrainingListFragment()).commit()
     }
 
