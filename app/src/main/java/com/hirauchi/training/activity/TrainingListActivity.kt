@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.hirauchi.training.R
 import com.hirauchi.training.fragment.TrainingListFragment
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class TrainingListActivity : BaseActivity() {
@@ -23,8 +24,7 @@ class TrainingListActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.menu_add_training -> toast(R.string.training_list_menu_add_training)
-            R.id.menu_privacy -> toast(R.string.training_list_menu_privacy)
-            R.id.menu_oss -> toast(R.string.training_list_menu_oss)
+            R.id.menu_app_info -> startActivity<AppInfoActivity>()
         }
         return super.onOptionsItemSelected(item)
     }
