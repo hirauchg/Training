@@ -9,4 +9,7 @@
     <string name="training_list_last_date">最終実施日：</string>
     <string name="training_list_last_date_non">未実施</string>
     <string name="training_list_last_date_format">M/dd</string>
+    <string name="training_list_menu_add_training">トレーニングの追加</string>
+    <string name="training_list_menu_privacy">プライバシーポリシー</string>
+    <string name="training_list_menu_oss">オープンソースライセンス</string>
 </resources>
