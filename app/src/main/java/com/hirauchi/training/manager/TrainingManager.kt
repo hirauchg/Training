@@ -20,16 +20,6 @@ class TrainingManager(ctx: Context) {
         return trainingList
     }
 
-    fun getRecordCountList(trainingId: Int): List<Int> {
-        lateinit var countList: List<Int>
-        mDB.use {
-            countList = select(TrainingDBHelper.TABLE_RECORD, TrainingDBHelper.CULM_COUNT)
-                    .whereArgs("(trainingId = {trainingId})", "trainingId" to trainingId)
-                    .parseList(classParser())
-        }
-        return countList
-    }
-
     fun addTraining(name: String) {
         mDB.use {
             insert(TrainingDBHelper.TABLE_TRAINING, TrainingDBHelper.CULM_NAME to name)

@@ -3,10 +3,7 @@ package com.hirauchi.training.manager
 import android.content.Context
 import com.hirauchi.training.database.TrainingDBHelper
 import com.hirauchi.training.model.Record
-import org.jetbrains.anko.db.classParser
-import org.jetbrains.anko.db.insert
-import org.jetbrains.anko.db.select
-import org.jetbrains.anko.db.update
+import org.jetbrains.anko.db.*
 
 class RecordManager(ctx: Context) {
 
@@ -17,6 +14,7 @@ class RecordManager(ctx: Context) {
         mDB.use {
             recordList = select(TrainingDBHelper.TABLE_RECORD)
                     .whereArgs("(trainingId = {trainingId})", "trainingId" to trainingId)
+                    .orderBy(TrainingDBHelper.CULM_DATETIME, SqlOrderDirection.DESC)
                     .parseList(classParser())
         }
         return recordList

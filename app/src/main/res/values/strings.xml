@@ -11,6 +11,11 @@
     <string name="training_list_last_date_format">M/dd</string>
     <string name="training_list_menu_add_training">トレーニングの追加</string>
     <string name="training_list_menu_app_info">アプリ情報</string>
+    <string name="training_list_dialog_add_title">トレーニングの追加</string>
+    <string name="training_list_dialog_edit_title">トレーニング名の編集</string>
+    <string name="training_list_dialog_hint">トレーニング名</string>
+    <string name="training_list_dialog_add_error">トレーニング名を入力してください。</string>
+    <string name="training_list_dialog_delete">「%1$s」を削除してよろしいですか？</string>
 
     <!-- AppInfo -->
     <string name="app_info_privacy">プライバシーポリシー</string>

@@ -5,16 +5,17 @@ import android.view.Menu
 import android.view.MenuItem
 import com.hirauchi.training.R
 import com.hirauchi.training.fragment.TrainingListFragment
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 
 class TrainingListActivity : BaseActivity() {
+
+    val mTrainingListFragment = TrainingListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        supportFragmentManager.beginTransaction().replace(R.id.Container, TrainingListFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.Container, mTrainingListFragment).commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -24,10 +25,9 @@ class TrainingListActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.menu_add_training -> toast(R.string.training_list_menu_add_training)
+            R.id.menu_add_training -> mTrainingListFragment.showTrainingAlert()
             R.id.menu_app_info -> startActivity<AppInfoActivity>()
         }
         return super.onOptionsItemSelected(item)
     }
-
 }
