@@ -11,10 +11,10 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import com.hirauchi.training.R
+import com.hirauchi.training.activity.TrainingRecordActivity
 import com.hirauchi.training.adapter.TrainingListAdapter
 import com.hirauchi.training.model.TrainingCard
 import com.hirauchi.training.ui.TrainingListFragmentUI
-import org.jetbrains.anko.support.v4.toast
 import com.hirauchi.training.manager.RecordManager
 import com.hirauchi.training.manager.TrainingManager
 import org.jetbrains.anko.*
@@ -125,7 +125,7 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
     }
 
     override fun onClickCard(position: Int) {
-        toast("onClickCard")
+        activity?.startActivity<TrainingRecordActivity>()
     }
 
     override fun onClickName(position: Int) {
