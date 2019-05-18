@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationSet
 import com.hirauchi.training.R
 import com.hirauchi.training.common.Constants
 import com.hirauchi.training.model.Record
@@ -47,8 +49,27 @@ class TrainingRecordSlidePageFragment : Fragment() {
         val ops = BitmapFactory.Options()
         ops.inSampleSize = 2
         mBitmap = BitmapFactory.decodeFile(mRecord.imagePath, ops)
-        mUI.mImage.imageBitmap = mBitmap
+        mBitmap?.let {
+            mUI.mImage.imageBitmap = mBitmap
+        } ?: mUI.mImage.setImageResource(R.drawable.file_not_exist)
+        mUI.mImage.setOnClickListener {
+            showText()
+        }
+
         mUI.mDate.text = SimpleDateFormat(mContext.getString(R.string.record_slide_date_format), Locale.US).format(mRecord.dateTime)
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun showText() {
+        mUI.mDate.visibility = View.VISIBLE
+
+        val fadeOut = AlphaAnimation(1.0F, 0.0F)
+        fadeOut.startOffset = 3000
+        fadeOut.duration = 1000
+
+        val animations = AnimationSet(false)
+        animations.addAnimation(fadeOut)
+        animations.fillAfter = true
+        mUI.mDate.startAnimation(animations)
     }
 }

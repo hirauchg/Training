@@ -24,6 +24,7 @@
 
     <!-- Record -->
     <string name="record_menu_add_record">トレーニング記録の追加</string>
+    <string name="record_menu_auto_slide">オートスライド</string>
 
     <!-- RecordList -->
     <string name="record_list_dialog_delete">削除してよろしいですか？</string>

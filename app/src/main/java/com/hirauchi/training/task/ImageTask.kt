@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.util.LruCache
 import android.widget.ImageView
+import com.hirauchi.training.R
 import org.jetbrains.anko.imageBitmap
 import java.lang.ref.WeakReference
 
@@ -18,14 +19,18 @@ class ImageTask(val mImageView: WeakReference<ImageView>, val bitmapCache: Bitma
             val ops = BitmapFactory.Options()
             ops.inSampleSize = 8
             val bitmap = BitmapFactory.decodeFile(params[0], ops)
-            bitmapCache.putBitmap(params[0], bitmap)
-            return bitmap
+            return bitmap?.let {
+                bitmapCache.putBitmap(params[0], bitmap)
+                it
+            }
         }
 
     }
 
     override fun onPostExecute(result: Bitmap?) {
-        mImageView.get()?.imageBitmap = result
+        result?.let {
+            mImageView.get()?.imageBitmap = it
+        } ?: mImageView.get()?.setImageResource(R.drawable.file_not_exist)
     }
 }
 

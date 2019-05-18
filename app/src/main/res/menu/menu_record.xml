@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_auto_slide"
+        android:title="@string/record_menu_add_record"
+        android:icon="@drawable/ic_auto_start"
+        app:showAsAction="ifRoom"/>
     <item android:id="@+id/menu_add_record"
         android:title="@string/record_menu_add_record"
         android:icon="@drawable/ic_add"
-    app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>
     </menu>

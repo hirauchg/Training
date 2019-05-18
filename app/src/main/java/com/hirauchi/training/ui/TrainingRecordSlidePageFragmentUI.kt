@@ -26,6 +26,7 @@ class TrainingRecordSlidePageFragmentUI : AnkoComponent<TrainingRecordSlidePageF
                 textColor = ContextCompat.getColor(ctx, R.color.white)
                 gravity = Gravity.CENTER_HORIZONTAL
                 setPadding(5, 0, 5, 0)
+                visibility = View.GONE
             }.lparams(width = wrapContent) {
                 centerHorizontally()
                 topMargin = dip(10)
