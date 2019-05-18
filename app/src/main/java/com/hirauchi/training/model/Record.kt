@@ -1,5 +1,7 @@
 package com.hirauchi.training.model
 
+import java.io.Serializable
+
 data class Record (
         val id: Int,
         val trainingId: Int,
@@ -7,4 +9,4 @@ data class Record (
         val imagePath: String?,
         val commnet: String?,
         val dateTime: Long
-)
+): Serializable

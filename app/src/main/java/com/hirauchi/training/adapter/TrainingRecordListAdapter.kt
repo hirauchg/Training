@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.hirauchi.training.R
 import com.hirauchi.training.model.Record
@@ -21,7 +22,8 @@ class TrainingRecordListAdapter(val mContext: Context, val mListener: TrainingRe
         RecyclerView.Adapter<TrainingRecordListAdapter.ViewHolder>() {
 
     interface TrainingRecordListAdapterListener {
-        fun OnClickContainer(id: Int)
+        fun onClickContainer(record: Record)
+        fun onClickDelete(position: Int)
     }
 
     private val mUI = TrainingRecordListAdapterUI()
@@ -40,7 +42,7 @@ class TrainingRecordListAdapter(val mContext: Context, val mListener: TrainingRe
         val item = mRecordList.get(position)
 
         holder.container.setOnClickListener {
-            mListener.OnClickContainer(item.id)
+            mListener.onClickContainer(item)
         }
 
         if (item.imagePath?.isNotEmpty() ?: false) {
@@ -54,8 +56,8 @@ class TrainingRecordListAdapter(val mContext: Context, val mListener: TrainingRe
         holder.count.text = mContext.getString(R.string.training_list_unit, item.count)
         holder.comment.text = item.commnet
 
-        if (mRecordList.size - 1 == position) {
-            holder.divider.visibility = View.GONE
+        holder.delete.setOnClickListener {
+            mListener.onClickDelete(position)
         }
     }
 
@@ -69,6 +71,6 @@ class TrainingRecordListAdapter(val mContext: Context, val mListener: TrainingRe
         val datetime: TextView = mUI.mDatetime
         val count: TextView = mUI.mCount
         val comment: TextView = mUI.mComment
-        val divider: View = mUI.mDivider
+        val delete: RelativeLayout = mUI.mDelete
     }
 }

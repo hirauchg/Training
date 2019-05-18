@@ -17,9 +17,9 @@ class TrainingRecordActivityUI : AnkoComponent<TrainingRecordActivity> {
         verticalLayout {
             mTabLayout = tabLayout {
                 tabGravity = TabLayout.GRAVITY_FILL
-                backgroundColor = getColor(ctx, R.color.black)
-                setTabTextColors(getColor(ctx, R.color.white), getColor(ctx, R.color.yellow))
-                setSelectedTabIndicatorColor(getColor(ctx, R.color.yellow))
+                backgroundColor = getColor(ctx, R.color.tabBG)
+                setTabTextColors(getColor(ctx, R.color.white), getColor(ctx, R.color.tabTextSelect))
+                setSelectedTabIndicatorColor(getColor(ctx, R.color.tabTextSelect))
             }
 
             viewPager {

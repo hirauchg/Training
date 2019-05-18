@@ -9,12 +9,10 @@ import com.hirauchi.training.fragment.TrainingRecordSlideFragment
 
 class TrainingRecordAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
+    private var mFragmentList = listOf<Fragment>()
+
     override fun getItem(p0: Int): Fragment {
-        return when (p0) {
-            0 -> TrainingRecordListFragment()
-            1 -> TrainingRecordSlideFragment()
-            else -> TrainingRecordChartFragment()
-        }
+        return mFragmentList.get(p0)
     }
 
     override fun getCount(): Int {
@@ -24,5 +22,9 @@ class TrainingRecordAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         val titles = listOf("List", "Slide", "Chart")
         return titles.get(position)
+    }
+
+    fun setFragmentList(fragmentList: List<Fragment>) {
+        mFragmentList = fragmentList
     }
 }

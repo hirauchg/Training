@@ -13,6 +13,7 @@ import android.widget.TextView
 import com.hirauchi.training.R
 import com.hirauchi.training.activity.TrainingRecordActivity
 import com.hirauchi.training.adapter.TrainingListAdapter
+import com.hirauchi.training.common.Constants
 import com.hirauchi.training.model.TrainingCard
 import com.hirauchi.training.ui.TrainingListFragmentUI
 import com.hirauchi.training.manager.RecordManager
@@ -75,7 +76,7 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
         mAdapter.notifyDataSetChanged()
     }
 
-    fun showTrainingAlert(trainingCard: TrainingCard? = null) {
+    fun showAddTrainingAlert(trainingCard: TrainingCard? = null) {
         lateinit var trainingName: EditText
         lateinit var errorMessage: TextView
 
@@ -125,11 +126,11 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
     }
 
     override fun onClickCard(position: Int) {
-        activity?.startActivity<TrainingRecordActivity>()
+        activity?.startActivityForResult<TrainingRecordActivity>(Constants.REQUEST_CODE_RECORD, Constants.KEY_TRAINING_ID to mCardList.get(position).id)
     }
 
     override fun onClickName(position: Int) {
-        showTrainingAlert(mCardList.get(position))
+        showAddTrainingAlert(mCardList.get(position))
     }
 
     override fun onClickDelete(position: Int) {
@@ -138,7 +139,7 @@ class TrainingListFragment : Fragment(), TrainingListAdapter.TrainingListAdapter
             title = getString(R.string.training_list_dialog_delete, trainingCard.name)
 
             yesButton {
-                TrainingManager(this@TrainingListFragment.mContext).deleteTraining(trainingCard.id)
+                TrainingManager(mContext).deleteTraining(trainingCard.id)
                 loadList()
             }
             noButton {}

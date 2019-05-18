@@ -21,4 +21,23 @@
     <string name="app_info_privacy">プライバシーポリシー</string>
     <string name="app_info_oss">オープンソースライセンス</string>
     <string name="app_info_version">アプリバージョン</string>
+
+    <!-- Record -->
+    <string name="record_menu_add_record">トレーニング記録の追加</string>
+
+    <!-- RecordList -->
+    <string name="record_list_dialog_delete">削除してよろしいですか？</string>
+
+    <!-- AddOrEditRecord -->
+    <string name="add_or_edit_title">トレーニングの記録</string>
+    <string name="add_or_edit_record_count">トレーニング回数</string>
+    <string name="add_or_edit_record_count_unit">回</string>
+    <string name="add_or_edit_record_image">画像</string>
+    <string name="add_or_edit_record_comment">コメント</string>
+    <string name="add_or_edit_record_add_button">記録する</string>
+    <string name="add_or_edit_record_edit_button">変更する</string>
+    <string name="add_or_edit_empty_count">回数を入力してください。</string>
+    <string name="add_or_edit_not_camera_parmission">カメラの権限をONにして下さい</string>
+    <string name="add_or_edit_not_storage_parmission">ストレージの権限をONにして下さい</string>
+
 </resources>

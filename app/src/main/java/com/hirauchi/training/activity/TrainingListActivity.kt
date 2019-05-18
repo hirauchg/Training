@@ -1,5 +1,7 @@
 package com.hirauchi.training.activity
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -25,9 +27,16 @@ class TrainingListActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.menu_add_training -> mTrainingListFragment.showTrainingAlert()
+            R.id.menu_add_training -> mTrainingListFragment.showAddTrainingAlert()
             R.id.menu_app_info -> startActivity<AppInfoActivity>()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            mTrainingListFragment.loadList()
+        }
     }
 }
