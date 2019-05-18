@@ -3,9 +3,6 @@ package com.hirauchi.training.adapter
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.hirauchi.training.fragment.TrainingRecordChartFragment
-import com.hirauchi.training.fragment.TrainingRecordListFragment
-import com.hirauchi.training.fragment.TrainingRecordSlideFragment
 
 class TrainingRecordAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -16,7 +13,7 @@ class TrainingRecordAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getCount(): Int {
-        return 3
+        return mFragmentList.size
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

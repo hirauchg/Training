@@ -34,7 +34,7 @@ class TrainingRecordActivity : BaseActivity() {
 
         mAdapter = TrainingRecordAdapter(supportFragmentManager)
         mAdapter.setFragmentList(listOf(mListFragment, mSlideFragment, mChartFragment))
-        val viewPager = findViewById<ViewPager>(R.id.ViewPager)
+        val viewPager = findViewById<ViewPager>(R.id.RecordViewPager)
         viewPager.adapter = mAdapter
         mUI.mTabLayout.setupWithViewPager(viewPager)
     }
@@ -55,9 +55,13 @@ class TrainingRecordActivity : BaseActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
             setResult(Activity.RESULT_OK)
-            mListFragment.reload()
-//            mSlideFragment.reload()
-//            mChartFragment.reload()
+            reloadFragments()
         }
+    }
+
+    fun reloadFragments() {
+        mListFragment.reload()
+        mSlideFragment.reload()
+//            mChartFragment.reload()
     }
 }

@@ -23,7 +23,7 @@ class TrainingRecordActivityUI : AnkoComponent<TrainingRecordActivity> {
             }
 
             viewPager {
-                id = R.id.ViewPager
+                id = R.id.RecordViewPager
             }
         }
     }

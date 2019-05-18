@@ -56,9 +56,9 @@ class TrainingRecordListFragment : Fragment(), TrainingRecordListAdapter.Trainin
             title = getString(R.string.record_list_dialog_delete)
 
             yesButton {
-                mActivity.setResult(Activity.RESULT_OK)
                 RecordManager(mActivity).deleteRecord(mRecordList.get(position).id)
-                reload()
+                mActivity.setResult(Activity.RESULT_OK)
+                mActivity.reloadFragments()
             }
             noButton {}
         }.show()

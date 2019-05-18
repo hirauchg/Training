@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="Container" type="id"/>
-    <item name="ViewPager" type="id"/>
+    <item name="RecordViewPager" type="id"/>
+    <item name="SlideViewPager" type="id"/>
 </resources>

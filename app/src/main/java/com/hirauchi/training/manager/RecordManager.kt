@@ -20,6 +20,17 @@ class RecordManager(ctx: Context) {
         return recordList
     }
 
+    fun getSlideRecordList(trainingId: Int): List<Record> {
+        lateinit var recordList: List<Record>
+        mDB.use {
+            recordList = select(TrainingDBHelper.TABLE_RECORD)
+                    .whereArgs("(imagePath is not null) and (trainingId = {trainingId})", "trainingId" to trainingId)
+                    .orderBy(TrainingDBHelper.CULM_DATETIME, SqlOrderDirection.DESC)
+                    .parseList(classParser())
+        }
+        return recordList
+    }
+
     fun addRecord(trainingId: Int, count: Int, imagePath: String?, commnet: String?) {
         mDB.use {
             insert(TrainingDBHelper.TABLE_RECORD,

@@ -65,10 +65,9 @@ class AddOrEditRecordFragmentUI : AnkoComponent<AddOrEditRecordFragment> {
 
                     textView(R.string.add_or_edit_record_count_unit) {
                         textSize = 18F
-                        translationY = -10F
+                        translationY = 15F
                     }.lparams(width = 40) {
                         alignParentEnd()
-                        alignParentBottom()
                     }
                 }.lparams {
                     horizontalMargin = dip(15)

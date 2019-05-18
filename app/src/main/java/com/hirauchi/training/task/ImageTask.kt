@@ -15,7 +15,9 @@ class ImageTask(val mImageView: WeakReference<ImageView>, val bitmapCache: Bitma
         return bitmapCache.getBitmap(params[0])?.also {
             return it
         } ?: run {
-            val bitmap = BitmapFactory.decodeFile(params[0])
+            val ops = BitmapFactory.Options()
+            ops.inSampleSize = 8
+            val bitmap = BitmapFactory.decodeFile(params[0], ops)
             bitmapCache.putBitmap(params[0], bitmap)
             return bitmap
         }
