@@ -68,7 +68,7 @@ class TrainingRecordSlideFragment : Fragment() {
                 mHandler?.post(this)
 
                 if (count >= mSlideRecordList.size) {
-                    stopAutoSlide()
+                    mActivity.stopAutoSlide()
                 }
             }
         }

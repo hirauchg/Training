@@ -80,7 +80,7 @@ class TrainingRecordActivity : BaseActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun stopAutoSlide() {
+    fun stopAutoSlide() {
         invalidateOptionsMenu()
         mSlideFragment.stopAutoSlide()
         mIsStarting = false
