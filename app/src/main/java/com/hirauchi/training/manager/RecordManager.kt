@@ -9,12 +9,12 @@ class RecordManager(ctx: Context) {
 
     private val mDB = TrainingDBHelper.getInstance(ctx)
 
-    fun getRecordList(trainingId: Int): List<Record> {
+    fun getRecordList(trainingId: Int, order: SqlOrderDirection = SqlOrderDirection.DESC): List<Record> {
         lateinit var recordList: List<Record>
         mDB.use {
             recordList = select(TrainingDBHelper.TABLE_RECORD)
                     .whereArgs("(trainingId = {trainingId})", "trainingId" to trainingId)
-                    .orderBy(TrainingDBHelper.CULM_DATETIME, SqlOrderDirection.DESC)
+                    .orderBy(TrainingDBHelper.CULM_DATETIME, order)
                     .parseList(classParser())
         }
         return recordList

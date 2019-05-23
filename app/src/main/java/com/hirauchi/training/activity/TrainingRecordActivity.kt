@@ -13,6 +13,7 @@ import com.hirauchi.training.fragment.TrainingRecordChartFragment
 import com.hirauchi.training.fragment.TrainingRecordListFragment
 import com.hirauchi.training.fragment.TrainingRecordSlideFragment
 import com.hirauchi.training.ui.TrainingRecordActivityUI
+import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 import org.jetbrains.anko.startActivityForResult
 
@@ -37,13 +38,16 @@ class TrainingRecordActivity : BaseActivity() {
 
         mAdapter = TrainingRecordAdapter(supportFragmentManager)
         mAdapter.setFragmentList(listOf(mListFragment, mSlideFragment, mChartFragment))
-        mViewPager = findViewById(R.id.RecordViewPager)
-        mViewPager.adapter = mAdapter
-        mViewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
-            override fun onPageSelected(position: Int) {
-                stopAutoSlide()
-            }
-        })
+
+        mViewPager = find<ViewPager>(R.id.RecordViewPager).apply {
+            adapter = mAdapter
+            offscreenPageLimit = 2
+            addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+                override fun onPageSelected(position: Int) {
+                    stopAutoSlide()
+                }
+            })
+        }
 
         mUI.mTabLayout.setupWithViewPager(mViewPager)
     }
@@ -97,6 +101,6 @@ class TrainingRecordActivity : BaseActivity() {
     fun reloadFragments() {
         mListFragment.reload()
         mSlideFragment.reload()
-//            mChartFragment.reload()
+        mChartFragment.reload()
     }
 }

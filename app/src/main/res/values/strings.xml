@@ -44,4 +44,12 @@
     <!-- RecordSlide -->
     <string name="record_slide_date_format">yy/MM/dd</string>
 
+    <!-- RecordChart -->
+    <string name="record_chart_training">トレーニング回数：</string>
+    <string name="record_chart_total">合計回数：</string>
+    <string name="record_chart_max">最高回数：</string>
+    <string name="record_chart_unit">%1$d 回</string>
+    <string name="record_chart_date_format">MM/dd</string>
+    <string name="record_chart_label_x">回数</string>
+
 </resources>
