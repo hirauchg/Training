@@ -83,6 +83,7 @@ class AddOrEditRecordFragmentUI : AnkoComponent<AddOrEditRecordFragment> {
                 mImage = imageView {
                     backgroundColor = ContextCompat.getColor(ctx, R.color.black)
                     scaleType = ImageView.ScaleType.FIT_CENTER
+                    setImageResource(R.drawable.no_image)
 
                     setOnClickListener {
                         ui.owner.clickedImage()
@@ -146,14 +147,18 @@ class AddOrEditRecordFragmentUI : AnkoComponent<AddOrEditRecordFragment> {
     fun setUpEditView(record: Record) {
         mRecord = record
 
-        mFilePath = mRecord?.imagePath?.let {
-            mImage.imageBitmap = BitmapFactory.decodeFile(it)
-            it
-        }
+        mFilePath = mRecord?.imagePath
+
+        mFilePath?.let {
+            BitmapFactory.decodeFile(mFilePath)?.let {
+                mImage.imageBitmap = it
+            } ?: mImage.setImageResource(R.drawable.file_not_exist)
+        } ?: mImage.setImageResource(R.drawable.no_image)
 
         mCount.setText(mRecord?.count.toString())
         mComment.setText(mRecord?.commnet)
         mButton.setText(R.string.add_or_edit_record_edit_button)
+
     }
 
     private fun saveImage(activity: Activity): String {

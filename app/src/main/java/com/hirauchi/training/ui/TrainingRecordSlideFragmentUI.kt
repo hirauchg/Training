@@ -14,11 +14,8 @@ class TrainingRecordSlideFragmentUI : AnkoComponent<TrainingRecordSlideFragment>
 
     override fun createView(ui: AnkoContext<TrainingRecordSlideFragment>) = with(ui) {
         relativeLayout {
-            verticalLayout {
-                viewPager {
-                    id = R.id.SlideViewPager
-                }
-
+            viewPager {
+                id = R.id.SlideViewPager
             }.lparams(width = matchParent, height = matchParent)
 
             mImageChange = imageView {

@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="textColor">#000000</color>
+    <color name="trainingListBG">#F1F1F1</color>
     <color name="tabBG">#111111</color>
     <color name="tabTextSelect">#FFDF00</color>
     <color name="imageTextBG">#88000000</color>

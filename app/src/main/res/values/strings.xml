@@ -6,6 +6,7 @@
     <string name="training_list_total">合計回数：</string>
     <string name="training_list_max">最高回数：</string>
     <string name="training_list_unit">%1$d 回</string>
+    <string name="training_list_date_format">yy/MM/dd</string>
     <string name="training_list_last_date">最終実施日：</string>
     <string name="training_list_last_date_non">未実施</string>
     <string name="training_list_last_date_format">M/dd</string>

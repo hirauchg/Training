@@ -21,12 +21,13 @@ import org.jetbrains.anko.imageBitmap
 class TrainingRecordSlideFragment : Fragment() {
 
     private val mUI = TrainingRecordSlideFragmentUI()
-    private var mSlideRecordList = listOf<Record>()
     private var mHandler: Handler? = null
     private var mRunnable: Runnable? = null
+    var mSlideRecordList = listOf<Record>()
 
     lateinit var mActivity: TrainingRecordActivity
     lateinit var mAdapter: TrainingRecordSlideAdapter
+    lateinit var mViewPager: ViewPager
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return mUI.createView(AnkoContext.create(inflater.context, this, false))
@@ -38,46 +39,56 @@ class TrainingRecordSlideFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        mSlideRecordList = RecordManager(mActivity).getSlideRecordList(mActivity.mTrainingId)
-
         mAdapter = TrainingRecordSlideAdapter(childFragmentManager)
-        mAdapter.setSlideRecordList(mSlideRecordList)
+        reload()
 
-        val viewPager = view.findViewById<ViewPager>(R.id.SlideViewPager)
-        viewPager.adapter = mAdapter
+        mViewPager = view.findViewById(R.id.SlideViewPager)
+        mViewPager.adapter = mAdapter
 
         super.onViewCreated(view, savedInstanceState)
     }
 
     fun startAutoSlide() {
+        if (mSlideRecordList.isEmpty()) {
+            mActivity.stopAutoSlide()
+            return
+        }
+
         mUI.mImageChange.visibility = View.VISIBLE
+        setImage(0)
 
         mHandler = Handler()
         mRunnable = object : Runnable {
             var count = 0
             override fun run() {
 
-                val ops = BitmapFactory.Options()
-                ops.inSampleSize = 4
-                val bitmap = BitmapFactory.decodeFile(mSlideRecordList.get(count).imagePath, ops)
-                bitmap?.let {
-                    mUI.mImageChange.imageBitmap = bitmap
-                } ?: mUI.mImageChange.setImageResource(R.drawable.file_not_exist)
+                if (count >= mSlideRecordList.size) {
+                    Thread.sleep(500)
+                    mActivity.stopAutoSlide()
+                    return
+                }
+
+                setImage(count)
 
                 count++
-                mHandler?.post(this)
-
-                if (count >= mSlideRecordList.size) {
-                    mActivity.stopAutoSlide()
-                }
+                mHandler?.post(mRunnable)
             }
         }
         mHandler?.post(mRunnable)
     }
 
+    private fun setImage(count: Int) {
+        val ops = BitmapFactory.Options()
+        ops.inSampleSize = 4
+        val bitmap = BitmapFactory.decodeFile(mSlideRecordList.get(count).imagePath, ops)
+        bitmap?.let {
+            mUI.mImageChange.imageBitmap = bitmap
+        } ?: mUI.mImageChange.setImageResource(R.drawable.file_not_exist)
+    }
+
     fun stopAutoSlide() {
-        mUI.mImageChange.visibility = View.GONE
         mHandler?.removeCallbacks(mRunnable)
+        mUI.mImageChange.visibility = View.GONE
     }
 
     fun reload() {

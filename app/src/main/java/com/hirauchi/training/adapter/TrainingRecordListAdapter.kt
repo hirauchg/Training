@@ -49,10 +49,10 @@ class TrainingRecordListAdapter(val mContext: Context, val mListener: TrainingRe
             val imageTask = ImageTask(WeakReference(holder.image), mBitmapCache)
             imageTask.execute(item.imagePath)
         } else {
-//            holder.image.setImageResource(R.drawable.no_image)
+            holder.image.setImageResource(R.drawable.no_image)
         }
 
-        holder.datetime.text = SimpleDateFormat("yy/MM/dd", Locale.US).format(item.dateTime)
+        holder.datetime.text = SimpleDateFormat(mContext.getString(R.string.training_list_last_date_format), Locale.US).format(item.dateTime)
         holder.count.text = mContext.getString(R.string.training_list_unit, item.count)
         holder.comment.text = item.commnet
 
