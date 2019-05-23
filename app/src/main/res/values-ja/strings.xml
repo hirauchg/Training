@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">トレコ</string>
+
+    <!-- TrainingList -->
+    <string name="training_list_title">トレーニング一覧</string>
+    <string name="training_list_total">合計回数：</string>
+    <string name="training_list_max">最高回数：</string>
+    <string name="training_list_unit">%1$d 回</string>
+    <string name="training_list_date_format">yy/MM/dd</string>
+    <string name="training_list_last_date">最終実施日：</string>
+    <string name="training_list_last_date_non">未実施</string>
+    <string name="training_list_last_date_format">M/dd</string>
+    <string name="training_list_menu_add_training">トレーニングの追加</string>
+    <string name="training_list_menu_app_info">アプリ情報</string>
+    <string name="training_list_dialog_add_title">トレーニングの追加</string>
+    <string name="training_list_dialog_edit_title">トレーニング名の編集</string>
+    <string name="training_list_dialog_hint">トレーニング名</string>
+    <string name="training_list_dialog_add_error">トレーニング名を入力してください。</string>
+    <string name="training_list_dialog_delete">「%1$s」を削除してよろしいですか？</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_privacy">プライバシーポリシー</string>
+    <string name="app_info_oss">オープンソースライセンス</string>
+    <string name="app_info_version">アプリバージョン</string>
+
+    <!-- Record -->
+    <string name="record_menu_add_record">トレーニング記録の追加</string>
+    <string name="record_menu_auto_slide">オートスライド</string>
+
+    <!-- RecordList -->
+    <string name="record_list_dialog_delete">削除してよろしいですか？</string>
+
+    <!-- AddOrEditRecord -->
+    <string name="add_or_edit_title">トレーニングの記録</string>
+    <string name="add_or_edit_record_count">トレーニング回数</string>
+    <string name="add_or_edit_record_count_unit">回</string>
+    <string name="add_or_edit_record_image">画像</string>
+    <string name="add_or_edit_record_comment">コメント</string>
+    <string name="add_or_edit_record_add_button">記録する</string>
+    <string name="add_or_edit_record_edit_button">変更する</string>
+    <string name="add_or_edit_empty_count">回数を入力してください。</string>
+    <string name="add_or_edit_not_camera_parmission">カメラの権限をONにして下さい</string>
+    <string name="add_or_edit_not_storage_parmission">ストレージの権限をONにして下さい</string>
+
+    <!-- RecordSlide -->
+    <string name="record_slide_date_format">yy/MM/dd</string>
+
+    <!-- RecordChart -->
+    <string name="record_chart_training">トレーニング回数：</string>
+    <string name="record_chart_total">合計回数：</string>
+    <string name="record_chart_max">最高回数：</string>
+    <string name="record_chart_unit">%1$d 回</string>
+    <string name="record_chart_date_format">MM/dd</string>
+    <string name="record_chart_label_x">回数</string>
+
+</resources>

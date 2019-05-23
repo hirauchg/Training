@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Toreco</string>
+
+    <!-- TrainingList -->
+    <string name="training_list_title">Lista de entrenamiento</string>
+    <string name="training_list_total">Total：</string>
+    <string name="training_list_max">Máximo：</string>
+    <string name="training_list_unit">%1$d</string>
+    <string name="training_list_date_format">yy/MM/dd</string>
+    <string name="training_list_last_date">Fecha final de implementación：</string>
+    <string name="training_list_last_date_non">No implementado</string>
+    <string name="training_list_last_date_format">M/dd</string>
+    <string name="training_list_menu_add_training">Agregar entrenamiento</string>
+    <string name="training_list_menu_app_info">Información de la aplicación</string>
+    <string name="training_list_dialog_add_title">Agregar entrenamiento</string>
+    <string name="training_list_dialog_edit_title">Editar nombre de entrenamiento</string>
+    <string name="training_list_dialog_hint">Nombre del entrenamiento</string>
+    <string name="training_list_dialog_add_error">Por favor ingrese el nombre del entrenamiento</string>
+    <string name="training_list_dialog_delete">¿Estás seguro de que quieres eliminar el "%1$s"?</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_privacy">Política de privacidad</string>
+    <string name="app_info_oss">Licencia de código abierto</string>
+    <string name="app_info_version">Versión de la aplicación</string>
+
+    <!-- Record -->
+    <string name="record_menu_add_record">Añadir registro de entrenamiento</string>
+    <string name="record_menu_auto_slide">Deslizamiento automático</string>
+
+    <!-- RecordList -->
+    <string name="record_list_dialog_delete">¿Estás seguro de que quieres eliminar?</string>
+
+    <!-- AddOrEditRecord -->
+    <string name="add_or_edit_title">Registro de entrenamiento</string>
+    <string name="add_or_edit_record_count">Número de entrenamientos</string>
+    <string name="add_or_edit_record_count_unit"></string>
+    <string name="add_or_edit_record_image">La imagen</string>
+    <string name="add_or_edit_record_comment">Comentar</string>
+    <string name="add_or_edit_record_add_button">Grabar</string>
+    <string name="add_or_edit_record_edit_button">Cambio</string>
+    <string name="add_or_edit_empty_count">Por favor ingrese el número</string>
+    <string name="add_or_edit_not_camera_parmission">Por favor, encienda la autoridad de la cámara</string>
+    <string name="add_or_edit_not_storage_parmission">Por favor, active la autoridad de almacenamiento</string>
+
+    <!-- RecordSlide -->
+    <string name="record_slide_date_format">yy/MM/dd</string>
+
+    <!-- RecordChart -->
+    <string name="record_chart_training">Número de entrenamientos：</string>
+    <string name="record_chart_total">Total：</string>
+    <string name="record_chart_max">Máximo：</string>
+    <string name="record_chart_unit">%1$d</string>
+    <string name="record_chart_date_format">MM/dd</string>
+    <string name="record_chart_label_x">Numero de veces</string>
+
+</resources>

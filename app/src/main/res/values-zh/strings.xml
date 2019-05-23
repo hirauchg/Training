@@ -1,0 +1,56 @@
+<resources>
+<string name="app_name">Toreco</string>
+
+<!-- TrainingList -->
+<string name="training_list_title">培训清单</string>
+<string name="training_list_total">总次数：</string>
+<string name="training_list_max">最大次数：</string>
+<string name="training_list_unit">%1$d</string>
+<string name="training_list_date_format">yy/MM/dd</string>
+<string name="training_list_last_date">最终实施日期：</string>
+<string name="training_list_last_date_non">没有实施</string>
+<string name="training_list_last_date_format">M/dd</string>
+<string name="training_list_menu_add_training">添加培训</string>
+<string name="training_list_menu_app_info">应用信息</string>
+<string name="training_list_dialog_add_title">添加培训</string>
+<string name="training_list_dialog_edit_title">编辑培训名称</string>
+<string name="training_list_dialog_hint">培训名称</string>
+<string name="training_list_dialog_add_error">请输入培训名称</string>
+<string name="training_list_dialog_delete">您确定要删除"%1$s"吗？</string>
+
+<!-- AppInfo -->
+<string name="app_info_privacy">隐私政策</string>
+<string name="app_info_oss">开源许可证</string>
+<string name="app_info_version">应用版本</string>
+
+<!-- Record -->
+<string name="record_menu_add_record">添加培训记录</string>
+<string name="record_menu_auto_slide">自动滑动</string>
+
+<!-- RecordList -->
+<string name="record_list_dialog_delete">您确定要删除吗？</string>
+
+<!-- AddOrEditRecord -->
+<string name="add_or_edit_title">培训记录</string>
+<string name="add_or_edit_record_count">培训数量</string>
+<string name="add_or_edit_record_count_unit"></string>
+<string name="add_or_edit_record_image">图片</string>
+<string name="add_or_edit_record_comment">评论</string>
+<string name="add_or_edit_record_add_button">记录</string>
+<string name="add_or_edit_record_edit_button">更改</string>
+<string name="add_or_edit_empty_count">请输入号码</string>
+<string name="add_or_edit_not_camera_parmission">请打开相机权限</string>
+<string name="add_or_edit_not_storage_parmission">请打开存储权限</string>
+
+<!-- RecordSlide -->
+<string name="record_slide_date_format">yy/MM/dd</string>
+
+<!-- RecordChart -->
+<string name="record_chart_training">培训数量：</string>
+<string name="record_chart_total">总次数：</string>
+<string name="record_chart_max">最大次数：</string>
+<string name="record_chart_unit">%1$d</string>
+<string name="record_chart_date_format">MM/dd</string>
+<string name="record_chart_label_x">次数</string>
+
+</resources>

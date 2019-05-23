@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Toreco</string>
+
+    <!-- TrainingList -->
+    <string name="training_list_title">교육 목록</string>
+    <string name="training_list_total">총 횟수：</string>
+    <string name="training_list_max">최고의 횟수：</string>
+    <string name="training_list_unit">%1$d</string>
+    <string name="training_list_date_format">yy/MM/dd</string>
+    <string name="training_list_last_date">최종 실시 일：</string>
+    <string name="training_list_last_date_non">미실시</string>
+    <string name="training_list_last_date_format">M/dd</string>
+    <string name="training_list_menu_add_training">교육 추가</string>
+    <string name="training_list_menu_app_info">응용 프로그램 정보</string>
+    <string name="training_list_dialog_add_title">교육 추가</string>
+    <string name="training_list_dialog_edit_title">교육 이름 편집</string>
+    <string name="training_list_dialog_hint">교육 명</string>
+    <string name="training_list_dialog_add_error">교육 이름을 입력하십시오.</string>
+    <string name="training_list_dialog_delete">"%1$s"을 삭제 하시겠습니까?</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_privacy">개인 정보 보호 정책</string>
+    <string name="app_info_oss">오픈 소스 라이센스</string>
+    <string name="app_info_version">응용 프로그램 버전</string>
+
+    <!-- Record -->
+    <string name="record_menu_add_record">교육 기록 추가</string>
+    <string name="record_menu_auto_slide">오토 슬라이드</string>
+
+    <!-- RecordList -->
+    <string name="record_list_dialog_delete">삭제 하시겠습니까?</string>
+
+    <!-- AddOrEditRecord -->
+    <string name="add_or_edit_title">교육 기록</string>
+    <string name="add_or_edit_record_count">교육 횟수</string>
+    <string name="add_or_edit_record_count_unit"></string>
+    <string name="add_or_edit_record_image">이미지</string>
+    <string name="add_or_edit_record_comment">댓글</string>
+    <string name="add_or_edit_record_add_button">기록</string>
+    <string name="add_or_edit_record_edit_button">변경</string>
+    <string name="add_or_edit_empty_count">횟수를 입력하십시오</string>
+    <string name="add_or_edit_not_camera_parmission">카메라의 권한을 ON으로하십시오</string>
+    <string name="add_or_edit_not_storage_parmission">스토리지의 권한을 ON으로하십시오</string>
+
+    <!-- RecordSlide -->
+    <string name="record_slide_date_format">yy/MM/dd</string>
+
+    <!-- RecordChart -->
+    <string name="record_chart_training">교육 횟수：</string>
+    <string name="record_chart_total">총 횟수：</string>
+    <string name="record_chart_max">최고의 횟수：</string>
+    <string name="record_chart_unit">%1$d</string>
+    <string name="record_chart_date_format">MM/dd</string>
+    <string name="record_chart_label_x">수</string>
+
+</resources>
